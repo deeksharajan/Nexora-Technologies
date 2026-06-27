@@ -1,0 +1,90 @@
+/* ---- Design tokens ---- */
+:root {
+  --ink: #F6F8FB;          /* base background, soft cool white */
+  --ink-soft: #FFFFFF;      /* panel background (cards, form) */
+  --line: #E2E6EE;          /* hairline borders */
+  --paper: #11141C;         /* dark text on light background */
+  --slate: #5B6472;         /* muted body text */
+  --violet: #00A98C;        /* primary accent — deep teal (readable on white) */
+  --amber: #E63E76;         /* secondary accent — magenta/pink, signature pulse */
+  --violet-dim: rgba(0, 169, 140, 0.12);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --maxw: 1180px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 169, 140, 0.10), transparent),
+              radial-gradient(ellipse 60% 40% at 90% 10%, rgba(230, 62, 118, 0.08), transparent),
+              var(--ink);
+  background-attachment: fixed;
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+}
+
+p { color: var(--slate); line-height: 1.6; margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+button { font-family: var(--font-body); cursor: pointer; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-top: 12px;
+}
+
+.section-head p {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+  .section { padding: 64px 0; }
+}
